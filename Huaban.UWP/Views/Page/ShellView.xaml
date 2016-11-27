@@ -53,7 +53,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<Grid Height="32" Background="{ThemeResource InkToolbarAccentColorThemeBrush}">
+		<Grid Height="32" Background="{ThemeResource InkToolbarAccentColorThemeBrush}" x:Name="ExtTitleBar">
 			<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 				<TextBlock Width="48" Visibility="{Binding BackButtonVisibility}"> </TextBlock>
 				<TextBlock x:Name="Title" VerticalAlignment="Center" Padding="12 0" FontSize="12">爱花瓣UWP</TextBlock>
@@ -63,7 +63,7 @@
 		<Grid Grid.Row="1">
 			<HB:TitleControl Height="48" Grid.ColumnSpan="2" VerticalAlignment="Top"></HB:TitleControl>
 			<Grid x:Name="LeftGrid">
-				<HB:SwipeableSplitView OpenPaneLength="256" x:Name="RootSplitView"
+				<HB:SwipeableSplitView OpenPaneLength="256" x:Name="RootSplitView" RequestedTheme="Dark"
 				IsPanSelectorEnabled="False" IsSwipeablePaneOpen="{Binding IsPaneOpen,Mode=TwoWay}">
 					<SplitView.Pane>
 						<Grid>
@@ -95,8 +95,8 @@
 						<Frame x:Name="MainFrame" RequestedTheme="{Binding Theme}"></Frame>
 					</SplitView.Content>
 				</HB:SwipeableSplitView>
-				<Grid Background="Transparent" Width="48" Height="48" 
-				HorizontalAlignment="Left" VerticalAlignment="Top">
+				<Grid Background="Transparent" Width="48" Height="48" RequestedTheme="Dark"
+					HorizontalAlignment="Left" VerticalAlignment="Top">
 					<ToggleButton x:Name="TogglePaneButton"
 					IsChecked="{Binding IsSwipeablePaneOpen, ElementName=RootSplitView, Mode=TwoWay}"
 					Style="{StaticResource SplitViewTogglePaneButtonStyle}"></ToggleButton>

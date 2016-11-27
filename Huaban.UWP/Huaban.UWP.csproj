@@ -167,6 +167,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Channel.cs" />
     <Compile Include="Models\ChannelType.cs" />
+    <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Commodity.cs" />
     <Compile Include="Models\Content.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Models\WeeklyDetail.cs" />
     <Compile Include="Models\WeeklyHotBoardImg.cs" />
     <Compile Include="Models\WeeklyTopicBoardImg.cs" />
+    <Compile Include="Selector\MainPivotDataTemplateSelector.cs" />
     <Compile Include="ViewModels\BoardListViewModel.cs" />
     <Compile Include="ViewModels\Content\BoardDetailViewModel.cs" />
     <Compile Include="ViewModels\Content\BoardPinsViewModel.cs" />
@@ -214,6 +216,7 @@
     <Compile Include="ViewModels\Content\UserViewModel.cs" />
     <Compile Include="ViewModels\Content\PinDetailViewModel.cs" />
     <Compile Include="ViewModels\Page\AboutViewModel.cs" />
+    <Compile Include="ViewModels\Page\MainViewModel.cs" />
     <Compile Include="ViewModels\Page\MessageViewModel.cs" />
     <Compile Include="ViewModels\Page\MyViewModel.cs" />
     <Compile Include="ViewModels\Page\SettingViewModel.cs" />
@@ -244,6 +247,9 @@
     </Compile>
     <Compile Include="Views\Page\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Page\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Page\SettingView.xaml.cs">
       <DependentUpon>SettingView.xaml</DependentUpon>
@@ -372,6 +378,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Page\AboutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Page\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

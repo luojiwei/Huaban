@@ -10,11 +10,11 @@ using Windows.UI.Xaml.Automation;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml;
+using Windows.Foundation;
 
 namespace Huaban.UWP.Controls
 {
 	using Huaban.UWP.Base;
-	using Windows.Foundation;
 
 	public class HBPage : Page
 	{

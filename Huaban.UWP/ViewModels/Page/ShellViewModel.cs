@@ -72,7 +72,7 @@ namespace Huaban.UWP.ViewModels
 			= new ObservableCollection<NavItemModel>(new NavItemModel[] {
 				new NavItemModel() { DestinationPage = "Home", Label = "首页", Title = "首页", Symbol = Symbol.Home },
 				new NavItemModel() { DestinationPage = "Following", Label = "关注", SymbolChar = '', Authorization = true },
-				new NavItemModel() { DestinationPage = "Message", Label = "消息", Title="消息", Symbol = Symbol.Message, Authorization = true }
+				new NavItemModel() { DestinationPage = "Message", Label = "消息", Title="消息", Symbol = Symbol.Find, Authorization = true }
 			});
 
 		private NavItemModel ThemeModeItem { set; get; }

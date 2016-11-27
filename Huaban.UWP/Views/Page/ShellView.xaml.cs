@@ -44,13 +44,7 @@ namespace Huaban.UWP.Views
 
 		private void InitImageLoader()
 		{
-			ImageLoader.Initialize(new ImageConfig.Builder()
-			{
-				CacheMode = ImageLib.Cache.CacheMode.MemoryAndStorageCache,
-				MemoryCacheImpl = new LRUMemoryCache(),
-				StorageCacheImpl = new LimitedStorageCache(ApplicationData.Current.LocalCacheFolder,
-				"cache", new SHA1CacheGenerator(), 1024 * 1024 * 1024)
-			}.AddDecoder<GifDecoder>().Build(), true);
+			
 		}
 
 		private void InitLayout()
@@ -74,6 +68,10 @@ namespace Huaban.UWP.Views
 				titleBar.ForegroundColor = Colors.White;
 				titleBar.InactiveBackgroundColor = Colors.Transparent;
 				titleBar.InactiveForegroundColor = Colors.White;
+			}
+			else
+			{
+				ExtTitleBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 			}
 		}
 	}

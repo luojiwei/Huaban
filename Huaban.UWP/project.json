@@ -1,7 +1,6 @@
 ﻿{
   "dependencies": {
-    "ImageLib.UWP": "5.0.0",
-    "Marduk.Controls": "1.0.2",
+    "ImageLib.UWP": "5.1.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Newtonsoft.Json": "9.0.1",
     "Unity": "4.0.1"

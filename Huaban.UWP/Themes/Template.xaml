@@ -20,6 +20,7 @@
 					<TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{Binding User.username}"></TextBlock>
 				</Grid>
 			</Grid>
+			
 			<Grid Visibility="{Binding Special,Converter={StaticResource ReverseVisbilityConverter}}">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="48" />
@@ -150,5 +151,26 @@
 	</DataTemplate>
 	<DataTemplate x:Key="CategoryListTemplate">
 		<TextBlock Text="{Binding name}"></TextBlock>
+	</DataTemplate>
+	
+	<DataTemplate x:Key="FindTemplate">
+		<Grid>
+			<TextBlock>FindTemplate content!</TextBlock>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="FollowingTemplate">
+		<Grid>
+			<TextBlock>FollowingTemplate content!</TextBlock>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="MessageTemplate">
+		<Grid>
+			<TextBlock>MessageTemplate content!</TextBlock>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="MineTemplate">
+		<Grid>
+			<TextBlock>MineTemplate content!</TextBlock>
+		</Grid>
 	</DataTemplate>
 </ResourceDictionary>
