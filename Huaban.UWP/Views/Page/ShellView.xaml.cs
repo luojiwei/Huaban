@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Metadata;
+﻿using Windows.Foundation.Metadata;
 using Windows.UI;
 using Windows.UI.ViewManagement;
-using Windows.UI.Xaml.Media;
 using Windows.ApplicationModel.Core;
-using Windows.Storage;
-using ImageLib;
-using ImageLib.Cache.Memory.CacheImpl;
-using ImageLib.Cache.Storage;
-using ImageLib.Cache.Storage.CacheImpl;
-using ImageLib.Gif;
 
 namespace Huaban.UWP.Views
 {
@@ -27,7 +14,6 @@ namespace Huaban.UWP.Views
 		{
 			this.InitializeComponent();
 			Current = this;
-			InitImageLoader();
 
 			this.Loaded += (s, e) =>
 			{
@@ -42,11 +28,14 @@ namespace Huaban.UWP.Views
 		}
 		public static ShellView Current { private set; get; }
 
+<<<<<<< HEAD
 		private void InitImageLoader()
 		{
 			
 		}
 
+=======
+>>>>>>> 796b2574da21a838fdd9a20b5fdef5d40233aa96
 		private void InitLayout()
 		{
 			if (!ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons"))

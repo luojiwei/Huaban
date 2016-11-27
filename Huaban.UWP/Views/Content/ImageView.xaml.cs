@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace Huaban.UWP.Views
 {
@@ -39,33 +29,33 @@ namespace Huaban.UWP.Views
 
 		private void IncrementalLoadingFlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var fv = sender as FlipView;
-			var fvi = fv.ContainerFromItem(fv.SelectedItem) as FlipViewItem;
-			if (fvi == null)
-				return;
+            var fv = sender as FlipView;
+            var fvi = fv.ContainerFromItem(fv.SelectedItem) as FlipViewItem;
+            if (fvi == null)
+                return;
 
-			var a = this;
-			var scrollView = fvi.GetChild<ScrollViewer>("scrollViewer");
-			var imgView = fvi.GetChild<ImageLib.Controls.ImageView>("imgView");
-			if (scrollView == null || imgView == null)
-				return;
-			Pin pin = scrollView.DataContext as Pin;
+            var a = this;
+            var scrollView = fvi.GetChild<ScrollViewer>("scrollViewer");
+            var imgView = fvi.GetChild<ImageLib.Controls.ImageView>("imgView");
+            if (scrollView == null || imgView == null)
+                return;
+            Pin pin = scrollView.DataContext as Pin;
 
-			imgView.MaxHeight = scrollView.ActualHeight;
-			imgView.MaxWidth = Math.Min(pin.file.width, scrollView.ActualWidth);
-			scrollView.ZoomToFactor(1);
-		}
+            imgView.MaxHeight = scrollView.ActualHeight;
+            imgView.MaxWidth = Math.Min(pin.file.width, scrollView.ActualWidth);
+            scrollView.ChangeView(null, null, 1);
+        }
 
 		private void scrollView_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
-			var scrollView = sender as ScrollViewer;
-			Pin pin = scrollView.DataContext as Pin;
-			var imgView = scrollView.GetChild<ImageLib.Controls.ImageView>("imgView");
-			if (scrollView == null)
-				return;
-			imgView.MaxHeight = scrollView.ActualHeight;
-			imgView.MaxWidth = Math.Min(pin.file.width, scrollView.ActualWidth);
+            var scrollView = sender as ScrollViewer;
+            Pin pin = scrollView.DataContext as Pin;
+            var imgView = scrollView.GetChild<ImageLib.Controls.ImageView>("imgView");
+            if (scrollView == null)
+                return;
+            imgView.MaxHeight = scrollView.ActualHeight;
+            imgView.MaxWidth = Math.Min(pin.file.width, scrollView.ActualWidth);
 
-		}
+        }
 	}
 }

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Input;
+﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+<<<<<<< HEAD
 using Windows.UI.Xaml.Automation;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml;
 using Windows.Foundation;
+=======
+>>>>>>> 796b2574da21a838fdd9a20b5fdef5d40233aa96
 
 namespace Huaban.UWP.Controls
 {

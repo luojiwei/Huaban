@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Huaban.UWP.Commands
@@ -20,10 +16,13 @@ namespace Huaban.UWP.Commands
 
 		public void Execute(object parameter)
 		{
-			var model = parameter as PinListViewModel;
-			if (model != null)
-				model.IsLoading = true;
+            var pin = parameter as Pin;
+            if (pin != null)
+            {
+                pin.IsLoaded = false;
+                pin.PinLoading = true;
+            }
 
-		}
+        }
 	}
 }

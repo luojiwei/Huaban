@@ -1,31 +1,14 @@
-﻿using ImageLib;
-using ImageLib.Cache.Memory.CacheImpl;
-using ImageLib.Cache.Storage;
-using ImageLib.Cache.Storage.CacheImpl;
-using ImageLib.Gif;
-
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+﻿using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Core;
-using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.ViewManagement;
-using Windows.Foundation.Metadata;
 using Windows.Storage;
+using ImageLib;
+using ImageLib.Cache.Storage;
+using ImageLib.Gif;
 
 namespace Huaban.UWP
 {
@@ -41,8 +24,8 @@ namespace Huaban.UWP
 		{
 			this.InitializeComponent();
 			this.InitLocator();
-
 			this.Suspending += OnSuspending;
+<<<<<<< HEAD
 
 			ImageLoader.Initialize(new ImageConfig.Builder()
 			{
@@ -52,12 +35,20 @@ namespace Huaban.UWP
 				"cache", new SHA1CacheGenerator(), 1024 * 1024 * 1024)
 			}.AddDecoder<GifDecoder>().Build(), true);
 
+=======
+>>>>>>> 796b2574da21a838fdd9a20b5fdef5d40233aa96
 		}
 		private void InitLocator()
 		{
 			ServiceLocator.BuildLocator();
 			ServiceLocator.RegisterInstance(AppContext);
-		}
+            var config = new ImageConfig.Builder()
+                .LimitedStorageCache(ApplicationData.Current.LocalCacheFolder, "cache", new SHA1CacheGenerator(), 1024 * 1024 * 1024)
+                .NewApi(false)
+                .AddDecoder<GifDecoder>()
+                .Build();
+            ImageLoader.Initialize(config);
+        }
 
 		//加载数据
 		private async Task LoadData()
@@ -100,8 +91,12 @@ namespace Huaban.UWP
 			{
 				if (rootFrame.Content == null)
 				{
+<<<<<<< HEAD
 					
 					rootFrame.Navigate(typeof(Views.MainView), e.Arguments);
+=======
+					rootFrame.Navigate(typeof(Views.ShellView), e.Arguments);
+>>>>>>> 796b2574da21a838fdd9a20b5fdef5d40233aa96
 				}
 				
 				Window.Current.Activate();

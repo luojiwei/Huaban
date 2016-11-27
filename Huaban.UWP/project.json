@@ -1,6 +1,10 @@
 ﻿{
   "dependencies": {
+<<<<<<< HEAD
     "ImageLib.UWP": "5.1.0",
+=======
+    "ImageLib.UWP": "5.2.0",
+>>>>>>> 796b2574da21a838fdd9a20b5fdef5d40233aa96
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Newtonsoft.Json": "9.0.1",
     "Unity": "4.0.1"
